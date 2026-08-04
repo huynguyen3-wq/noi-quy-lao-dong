@@ -1,0 +1,262 @@
+/* ──────────────────────────────────────────────────────────────────────────
+   iSMART Education — Design Tokens
+   Sourced from "iSMART Masterbrand Guideline" (Vietnamese, 52pp)
+   Brand: K-12 English language training. Tone: professional yet approachable,
+   warm, kid-friendly. Vietnamese ⇄ English bilingual.
+   ────────────────────────────────────────────────────────────────────────── */
+
+/* ╔══════════════════════════════════════════════════════════════════════╗
+   ║  TYPOGRAPHY                                                          ║
+   ╚══════════════════════════════════════════════════════════════════════╝
+   BRAND FONT: Montserrat (supplied by the brand team, 2026-06). A geometric
+   humanist sans with full Vietnamese diacritic coverage, used for both
+   display and text — weight carries the hierarchy (900/800 display, 700
+   headings, 400/500/600 body). SELF-HOSTED from /fonts using the variable-
+   font files (one binary covers the whole 100–900 axis, normal + italic), so
+   it works fully offline. JetBrains Mono (not supplied) stays on the Google
+   Fonts CDN for numerals/codes. */
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap');
+
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('fonts/Montserrat-VariableFont_wght.ttf') format('truetype-variations');
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-style: italic;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('fonts/Montserrat-Italic-VariableFont_wght.ttf') format('truetype-variations');
+}
+
+:root {
+  /* Font families */
+  --font-display: 'Montserrat', 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  /* Type scale — tuned for bilingual VN/EN content (Vietnamese diacritics
+     need extra line-height headroom). */
+  --fs-display-xl: 64px;     --lh-display-xl: 1.05;
+  --fs-display-lg: 48px;     --lh-display-lg: 1.10;
+  --fs-display-md: 36px;     --lh-display-md: 1.15;
+  --fs-h1: 32px;             --lh-h1: 1.20;
+  --fs-h2: 24px;             --lh-h2: 1.25;
+  --fs-h3: 20px;             --lh-h3: 1.30;
+  --fs-h4: 18px;             --lh-h4: 1.35;
+  --fs-body-lg: 17px;        --lh-body-lg: 1.55;
+  --fs-body: 15px;           --lh-body: 1.55;
+  --fs-body-sm: 13px;        --lh-body-sm: 1.50;
+  --fs-caption: 12px;        --lh-caption: 1.45;
+  --fs-eyebrow: 12px;        --lh-eyebrow: 1.20;
+
+  /* Weights */
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+  --fw-extrabold: 800;
+  --fw-black: 900;
+
+  /* ╔══════════════════════════════════════════════════════════════════╗
+     ║  COLOR — PRIMARY (Cam / Xanh / Trắng)                            ║
+     ╚══════════════════════════════════════════════════════════════════╝
+     Per guideline §"Hướng dẫn sử dụng tỉ lệ màu sắc thương hiệu":
+     Orange ≥40%, Blue ≥25%, White ≥25% in any composition.       */
+
+  /* Cam — Orange (the sun: enthusiasm, energy, persistence) */
+  --color-orange-50:  #FFF3EC;
+  --color-orange-100: #FFE0CD;
+  --color-orange-200: #FFC09B;
+  --color-orange-300: #FF9866;
+  --color-orange-400: #F87038;
+  --color-orange-500: #F15A24;   /* ← Brand primary "Cam" */
+  --color-orange-600: #D94516;
+  --color-orange-700: #B6360F;
+  --color-orange-800: #8E2A0C;
+  --color-orange-900: #6A2009;
+
+  /* Xanh — Blue / Navy (technology, global reach) */
+  --color-blue-50:  #EEF1FA;
+  --color-blue-100: #D6DCF1;
+  --color-blue-200: #ADB9E3;
+  --color-blue-300: #7E8FCF;
+  --color-blue-400: #4C61B6;
+  --color-blue-500: #2B3F95;
+  --color-blue-600: #1F3084;     /* ← Brand primary "Xanh" */
+  --color-blue-700: #182A78;
+  --color-blue-800: #11215E;
+  --color-blue-900: #0B1845;
+
+  /* Trắng — White (writing, permanence, academic clarity) */
+  --color-white: #FFFFFF;
+  --color-off-white: #FBF7F3;     /* warm off-white for backgrounds */
+
+  /* ╔══════════════════════════════════════════════════════════════════╗
+     ║  COLOR — SECONDARY (max 2 per layout, light usage)               ║
+     ╚══════════════════════════════════════════════════════════════════╝ */
+
+  /* Đỏ — Red (Math: precision) — max 5% */
+  --color-red-500: #ED1C24;
+  --color-red-600: #C9131B;
+  --color-red-100: #FCD7D9;
+
+  /* Xanh da trời — Sky Blue (Chemistry: experimentation) — max 5% */
+  --color-sky-500: #29ABE2;
+  --color-sky-600: #1E8DBE;
+  --color-sky-100: #CDE9F8;
+
+  /* Xanh lá — Green (Biology: continuous improvement) — max 10% */
+  --color-green-500: #39B54A;
+  --color-green-600: #2C9A3B;
+  --color-green-100: #D2EFD7;
+
+  /* Vàng — Yellow (Science: creativity) — max 10% */
+  --color-yellow-500: #FBB040;
+  --color-yellow-600: #E69826;
+  --color-yellow-100: #FEEBC9;
+
+  /* Đen — Black (Physics & cosmos: exploration) — max 5% */
+  --color-black: #1A1A1A;
+  --color-gray-50:  #F7F6F4;
+  --color-gray-100: #EDEBE7;
+  --color-gray-200: #DDDAD3;
+  --color-gray-300: #C2BEB5;
+  --color-gray-400: #9A9489;
+  --color-gray-500: #6E685D;
+  --color-gray-600: #4E483F;
+  --color-gray-700: #363128;
+  --color-gray-800: #24201A;
+  --color-gray-900: #14110D;
+
+  /* ╔══════════════════════════════════════════════════════════════════╗
+     ║  SEMANTIC TOKENS                                                 ║
+     ╚══════════════════════════════════════════════════════════════════╝ */
+
+  /* Surfaces / backgrounds */
+  --bg-page: var(--color-off-white);
+  --bg-surface: var(--color-white);
+  --bg-surface-alt: var(--color-gray-50);
+  --bg-inverse: var(--color-blue-600);
+  --bg-brand: var(--color-orange-500);
+  --bg-brand-soft: var(--color-orange-50);
+  --bg-accent: var(--color-blue-600);
+  --bg-accent-soft: var(--color-blue-50);
+
+  /* Foreground / text */
+  --fg-primary: var(--color-gray-900);
+  --fg-secondary: var(--color-gray-600);
+  --fg-tertiary: var(--color-gray-500);
+  --fg-on-brand: var(--color-white);
+  --fg-on-accent: var(--color-white);
+  --fg-brand: var(--color-orange-600);
+  --fg-accent: var(--color-blue-600);
+  --fg-link: var(--color-blue-600);
+
+  /* Borders */
+  --border-subtle: var(--color-gray-100);
+  --border-default: var(--color-gray-200);
+  --border-strong: var(--color-gray-300);
+  --border-brand: var(--color-orange-500);
+  --border-accent: var(--color-blue-600);
+
+  /* Status (mapped to secondary palette per brand intent) */
+  --status-success: var(--color-green-500);
+  --status-success-bg: var(--color-green-100);
+  --status-warning: var(--color-yellow-500);
+  --status-warning-bg: var(--color-yellow-100);
+  --status-danger:  var(--color-red-500);
+  --status-danger-bg: var(--color-red-100);
+  --status-info:    var(--color-sky-500);
+  --status-info-bg: var(--color-sky-100);
+
+  /* Radii — pill / rounded, per brand "luôn bo góc" instruction */
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-2xl: 32px;
+  --radius-pill: 999px;
+
+  /* Spacing — 4-pt grid */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-7: 32px;
+  --space-8: 40px;
+  --space-9: 48px;
+  --space-10: 64px;
+  --space-11: 80px;
+  --space-12: 96px;
+
+  /* Shadows — soft, lifted; no hard drop shadows (guideline forbids logo
+     drop shadows; cards take the same restraint). */
+  --shadow-xs: 0 1px 2px rgba(20, 17, 13, 0.06);
+  --shadow-sm: 0 2px 6px rgba(20, 17, 13, 0.06), 0 1px 2px rgba(20, 17, 13, 0.04);
+  --shadow-md: 0 6px 18px rgba(31, 48, 132, 0.08), 0 2px 6px rgba(20, 17, 13, 0.05);
+  --shadow-lg: 0 12px 32px rgba(31, 48, 132, 0.10), 0 4px 12px rgba(20, 17, 13, 0.06);
+  --shadow-brand: 0 8px 24px rgba(241, 90, 36, 0.28);     /* orange glow on CTAs */
+  --shadow-accent: 0 8px 24px rgba(31, 48, 132, 0.22);    /* blue glow */
+  --shadow-inset: inset 0 1px 0 rgba(255,255,255,0.6), inset 0 -1px 0 rgba(20,17,13,0.04);
+
+  /* Motion */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --duration-fast: 120ms;
+  --duration-base: 200ms;
+  --duration-slow: 320ms;
+}
+
+/* ╔══════════════════════════════════════════════════════════════════════╗
+   ║  ELEMENT DEFAULTS                                                    ║
+   ╚══════════════════════════════════════════════════════════════════════╝ */
+
+html, body {
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  color: var(--fg-primary);
+  background: var(--bg-page);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, .h1 { font-family: var(--font-display); font-weight: var(--fw-extrabold);
+  font-size: var(--fs-h1); line-height: var(--lh-h1); letter-spacing: -0.01em; color: var(--fg-primary); }
+h2, .h2 { font-family: var(--font-display); font-weight: var(--fw-bold);
+  font-size: var(--fs-h2); line-height: var(--lh-h2); letter-spacing: -0.005em; }
+h3, .h3 { font-family: var(--font-display); font-weight: var(--fw-bold);
+  font-size: var(--fs-h3); line-height: var(--lh-h3); }
+h4, .h4 { font-family: var(--font-display); font-weight: var(--fw-semibold);
+  font-size: var(--fs-h4); line-height: var(--lh-h4); }
+
+.display-xl { font-family: var(--font-display); font-weight: var(--fw-black);
+  font-size: var(--fs-display-xl); line-height: var(--lh-display-xl);
+  letter-spacing: -0.02em; }
+.display-lg { font-family: var(--font-display); font-weight: var(--fw-extrabold);
+  font-size: var(--fs-display-lg); line-height: var(--lh-display-lg); letter-spacing: -0.015em; }
+.display-md { font-family: var(--font-display); font-weight: var(--fw-extrabold);
+  font-size: var(--fs-display-md); line-height: var(--lh-display-md); letter-spacing: -0.01em; }
+
+p, .body { font-size: var(--fs-body); line-height: var(--lh-body); }
+.body-lg { font-size: var(--fs-body-lg); line-height: var(--lh-body-lg); }
+.body-sm { font-size: var(--fs-body-sm); line-height: var(--lh-body-sm); }
+.caption { font-size: var(--fs-caption); line-height: var(--lh-caption); color: var(--fg-secondary); }
+.eyebrow { font-family: var(--font-display); font-weight: var(--fw-bold);
+  font-size: var(--fs-eyebrow); line-height: var(--lh-eyebrow); letter-spacing: 0.10em;
+  text-transform: uppercase; color: var(--fg-brand); }
+
+code, kbd, .mono { font-family: var(--font-mono); font-size: 0.92em; }
+
+a { color: var(--fg-link); text-decoration: none; }
+a:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+::selection { background: var(--color-orange-200); color: var(--color-gray-900); }

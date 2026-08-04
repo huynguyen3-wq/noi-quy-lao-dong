@@ -1,0 +1,7 @@
+{
+  "name": "robo-ismart",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Trợ lý ISAAC iSMART — chatbot nội quy & lương thưởng (Vercel)"
+}
