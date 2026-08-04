@@ -4,7 +4,7 @@
 //  Biến môi trường cần đặt trên Vercel (Settings → Environment Variables):
 //    ANTHROPIC_API_KEY     — khóa API Anthropic (bắt buộc)
 //    ALLOWED_EMAIL_DOMAIN  — (tùy chọn) mặc định 'ismart.edu.vn'
-//    CLAUDE_MODEL          — (tùy chọn) mặc định 'claude-3-5-haiku-20241022'
+//    CLAUDE_MODEL          — (tùy chọn) mặc định 'claude-3-haiku-20240307'
 // ============================================================================
 
 export default async function handler(req, res) {
@@ -46,7 +46,7 @@ export default async function handler(req, res) {
         'anthropic-version': '2023-06-01'
       },
       body: JSON.stringify({
-        model: process.env.CLAUDE_MODEL || 'claude-3-5-haiku-20241022',
+        model: process.env.CLAUDE_MODEL || 'claude-3-haiku-20240307',
         max_tokens: 1024,
         messages: [{ role: 'user', content: prompt }]
       })
